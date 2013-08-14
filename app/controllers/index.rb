@@ -7,9 +7,9 @@ get '/create_survey/:id' do |id|
 	erb :create_survey
 end
 
-post '/create_survey/:id' do
+post '/create_survey' do
 	@survey = Survey.create(params[:user])
-	redirect "/make_questions/#{@survey.id}"
+  erb :make_questions, layout: false
 end 
 
 get '/make_questions/:id' do |id|
@@ -55,10 +55,7 @@ end
 
 
 post '/survey_submit' do 
-
   survey_id = params.shift.pop
-  p survey_id
-  p params
   if params
     params.values.each do |answer_id|
       Response.create(user_id: session[:user_id], survey_id: survey_id,  answer_id: answer_id)

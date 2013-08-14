@@ -1,17 +1,19 @@
 <p> Survey Questions</p>
 
+<h2><%= @survey.title %></h2>
+
 <form method="POST" action="/make_questions/<%= @survey.id %>">
 	<div class="questions">
 		<div class="question">
-			<input type="text" name="survey[][title]" placeholder="question">
+			<span>Question : </span><input type="text" name="survey[][title]" title="question" autofocus>
 			<div class="answers">
-
 				<input type="text" name="survey[][answers][]" placeholder="answer">
 				<input type="text" name="survey[][answers][]" placeholder="answer">
 			</div>
 			<button type="submit" name="add_a">Add Answer</button>
 		</div>
 	</div>
-	<button type="submit" name="add_q">Add Question</button>
-<button type="submit">Submit question</button>
+	<button type="submit" name="add_q">Add Question</button><br>
+	<br>
+<button type="submit" class="green-button">Submit question</button>
 </form>
