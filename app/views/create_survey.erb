@@ -1,7 +1,7 @@
 <div class='survey-name'>
 	<h2> Survey Title </h2>
 	<form method ="POST" action="/create_survey" id="create-survey">
-		<input type="text" name="user[title]">
+		<input type="text" name="user[title]" style="width: 30%;">
 		<input type="hidden" name="user[user_id]" value="<%= current_user.id  %>">
 		<input type="submit" value="Submit" class="green-button">
 	</form>
